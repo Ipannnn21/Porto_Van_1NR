@@ -1,7 +1,7 @@
-
+ 👇
 ---
 
-# 📱 Android Portfolio App — Profil Diri & Portofolio
+# 📱 Porto Van_1NR.apk — Android Portfolio App
 
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-Android-green?style=flat-square" />
@@ -10,7 +10,8 @@
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" />
 </p>
 
-Aplikasi **Profil Diri & Portofolio Android** yang berisi **CV digital**, **riwayat pendidikan**, **pengalaman kerja**, **keahlian**, **portofolio**, hingga **kontak pribadi**. Dibangun menggunakan **Kotlin**, **Navigation Component**, **Fragment-based UI**, **SQLite**, serta **DataStore** untuk pengelolaan tema dan mode gelap/terang.
+**Porto Van_1NR.apk** adalah aplikasi Android milik **Irfan Harits Hamman Akbar** yang berfungsi sebagai **profil diri dan portofolio digital**. Aplikasi ini menampilkan **CV digital**, **riwayat pendidikan**, **pengalaman**, **keahlian**, **portofolio proyek**, hingga **informasi kontak**.
+Aplikasi dikembangkan menggunakan **Kotlin**, **Navigation Component**, **Fragment-based UI**, **SQLite**, serta **DataStore** untuk pengelolaan tema gelap dan terang.
 
 ---
 
@@ -34,19 +35,19 @@ Aplikasi **Profil Diri & Portofolio Android** yang berisi **CV digital**, **riwa
 </tr>
 <tr>
 <td><b>Dark / Light Mode</b></td>
-<td>Pengaturan tema disimpan permanen via <b>DataStore Preferences</b></td>
+<td>Pengaturan tema disimpan permanen menggunakan <b>DataStore Preferences</b></td>
 </tr>
 <tr>
 <td><b>Download CV (PDF)</b></td>
-<td>Generate PDF menggunakan <code>iText</code></td>
+<td>Pembuatan CV dalam bentuk PDF menggunakan <code>iText</code></td>
 </tr>
 <tr>
 <td><b>Galeri Portofolio</b></td>
-<td>RecyclerView Grid Layout untuk menampilkan proyek</td>
+<td>Menampilkan proyek dalam bentuk grid menggunakan RecyclerView</td>
 </tr>
 <tr>
 <td><b>SQLite Database</b></td>
-<td>Penyimpanan lokal untuk data portofolio, pengalaman, pendidikan, dan lainnya</td>
+<td>Penyimpanan data lokal untuk pendidikan, pengalaman, portofolio, dan lainnya</td>
 </tr>
 </tbody>
 </table>
@@ -57,7 +58,7 @@ Aplikasi **Profil Diri & Portofolio Android** yang berisi **CV digital**, **riwa
 
 * Kotlin
 * Android Navigation Component
-* Fragments
+* Fragment
 * UI/UX berbasis XML
 * RecyclerView (List & Grid)
 * DataStore Preferences
@@ -69,14 +70,14 @@ Aplikasi **Profil Diri & Portofolio Android** yang berisi **CV digital**, **riwa
 ## 📂 Struktur Proyek
 
 ```
-android-portfolio-app/
+porto_Van_1NR/
 ├── app/src/main/java/com/portfolio/app/
 │   ├── MainActivity.kt
 │   ├── data/
-│   │   └── DatabaseHelper.kt         # SQLite + Data Classes
+│   │   └── DatabaseHelper.kt         # SQLite & Data Classes
 │   ├── util/
-│   │   ├── ThemeManager.kt           # DataStore Manager
-│   │   └── PdfGenerator.kt           # CV PDF Generator
+│   │   ├── ThemeManager.kt           # DataStore Theme Manager
+│   │   └── PdfGenerator.kt           # Generator CV PDF
 │   └── ui/
 │       ├── tentang/TentangFragment.kt
 │       ├── pendidikan/PendidikanFragment.kt + Adapter
@@ -90,35 +91,33 @@ android-portfolio-app/
 
 ## 🚀 Cara Menggunakan Proyek
 
-### **1. Clone via Android Studio (tanpa download manual)**
-
-Bisa langsung dari Android Studio:
+### **1. Clone via Android Studio**
 
 ```
-Android Studio → Get from VCS → Pilih GitHub → Paste URL Repository → Clone
+Android Studio → Get from VCS → GitHub → Paste URL Repository → Clone
 ```
 
-Atau versi lengkapnya:
+Langkah detail:
 
 1. Buka Android Studio
-2. Pilih menu **"Get from Version Control"** atau **"Clone Repository"**
+2. Pilih **Get from Version Control**
 3. Pilih **GitHub**
-4. Paste URL repo ke kolom Git
+4. Paste URL repository
 5. Klik **Clone**
 
 ---
 
 ### **2. Import Manual**
 
-1. Download folder `android-portfolio-app`
+1. Download folder proyek
 2. Buka Android Studio
 3. Pilih:
 
    ```
-   File → Open → pilih folder android-portfolio-app
+   File → Open → pilih folder proyek
    ```
 4. Tunggu proses **Gradle Sync**
-5. Jalankan aplikasi di emulator atau device Android
+5. Jalankan aplikasi di emulator atau perangkat Android
 
 ---
 
@@ -127,31 +126,17 @@ Atau versi lengkapnya:
 ```
 MIT License
 
-Copyright (c) 2025 winkyid
+Copyright (c) 2025
+Irfan Harits Hamman Akbar
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+copies of the Software.
 ```
 
 ---
 
-## ⭐ Support
+**lebih akademik atau profesional**
 
-Jangan lupa beri ⭐ di GitHub untuk mendukung pengembangan proyek ini.
-
----
