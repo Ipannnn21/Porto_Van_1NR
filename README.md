@@ -1,4 +1,4 @@
- 👇
+
 ---
 
 # 📱 Porto Van_1NR.apk — Android Portfolio App
