@@ -146,7 +146,3 @@ Slimmy License v1.0
 Copyright (c) 2025 Slimmy Projects
 ```
 
----
-
-**lebih akademik atau profesional**
-
