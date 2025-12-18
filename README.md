@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/Platform-Android-green?style=flat-square" />
   <img src="https://img.shields.io/badge/Language-Kotlin-blue?style=flat-square" />
   <img src="https://img.shields.io/badge/UI-XML%20Layout-orange?style=flat-square" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" />
+  <img src="https://img.shields.io/badge/License-Slimmy_V1-purple?style=flat-square" />
 </p>
 
 **Porto Van_1NR.apk** adalah aplikasi Android milik **Irfan Harits Hamman Akbar** yang berfungsi sebagai **profil diri dan portofolio digital**. Aplikasi ini menampilkan **CV digital**, **riwayat pendidikan**, **pengalaman**, **keahlian**, **portofolio proyek**, hingga **informasi kontak**.
