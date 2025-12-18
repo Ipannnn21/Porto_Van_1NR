@@ -121,19 +121,29 @@ Langkah detail:
 
 ---
 
-## 📄 Lisensi (MIT)
+## 📄 Lisensi
+
+Proyek **Porto Van_1NR.apk** dilisensikan di bawah **Slimmy License v1.0**.
+
+Lisensi ini memberikan izin luas untuk:
+
+* Menggunakan, menyalin, memodifikasi, dan mendistribusikan aplikasi
+* Membuat dan menyebarkan turunan proyek (derivative works)
+* Penggunaan komersial dan sublicensing
+
+Dengan ketentuan utama:
+
+* **Atribusi ke Slimmy Projects wajib dipertahankan**
+* Perubahan signifikan harus **didokumentasikan dengan jelas**
+* Tidak diperkenankan menggunakan nama, logo, atau merek **Slimmy Projects** untuk promosi tanpa izin tertulis
+* Lisensi mencakup **grant paten** dengan klausul **patent retaliation**
+* Perangkat lunak disediakan **“AS IS” tanpa garansi**
+
+Detail lengkap lisensi dapat dilihat pada file **LICENSE** di repositori ini.
 
 ```
-MIT License
-
-Copyright (c) 2025
-Irfan Harits Hamman Akbar
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software.
+Slimmy License v1.0
+Copyright (c) 2025 Slimmy Projects
 ```
 
 ---
