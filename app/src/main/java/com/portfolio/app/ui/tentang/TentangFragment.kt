@@ -4,18 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
+import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
+import com.portfolio.app.R
 import com.portfolio.app.data.DatabaseHelper
-import com.portfolio.app.databinding.FragmentTentangBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 class TentangFragment : Fragment() {
-
-    private var _binding: FragmentTentangBinding? = null
-    private val binding get() = _binding!!
 
     private lateinit var dbHelper: DatabaseHelper
 
@@ -23,33 +18,53 @@ class TentangFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentTentangBinding.inflate(inflater, container, false)
-        return binding.root
+    ): View? {
+        return inflater.inflate(R.layout.fragment_tentang, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         dbHelper = DatabaseHelper(requireContext())
-        loadProfile()
-    }
 
-    private fun loadProfile() {
-        lifecycleScope.launch(Dispatchers.IO) {
-            val profile = dbHelper.getProfile()
-            withContext(Dispatchers.Main) {
-                profile?.let {
-                    binding.tvNama.text = it.nama
-                    binding.tvTitle.text = it.title
-                    binding.tvBio.text = it.bio
+        val profile = dbHelper.getProfile()
+
+        profile?.let {
+            view.findViewById<TextView>(R.id.tv_nama).text = it.nama
+            view.findViewById<TextView>(R.id.tv_title).text = it.title
+            view.findViewById<TextView>(R.id.tv_bio).text = it.bio
+            view.findViewById<TextView>(R.id.tv_deskripsi_singkat).text = it.deskripsiSingkat
+
+            // Populate Biodata
+            val gridBiodata = view.findViewById<GridLayout>(R.id.grid_biodata)
+            val biodataMap = mapOf(
+                "Tempat, Tanggal Lahir" to it.tempatTanggalLahir,
+                "Status" to it.statusPernikahan,
+                "Kewarganegaraan" to it.kewarganegaraan,
+                "Agama" to it.agama,
+                "Jenis Kelamin" to it.jenisKelamin,
+                "Nomor Telepon" to it.phone,
+                "Email" to it.email
+            )
+
+            for ((label, value) in biodataMap) {
+                if (!value.isNullOrBlank()) {
+                    addBiodataRow(gridBiodata, label, value)
                 }
             }
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun addBiodataRow(grid: GridLayout, label: String, value: String) {
+        val inflater = LayoutInflater.from(context)
+        
+        // Label
+        val labelView = inflater.inflate(R.layout.item_biodata_label, grid, false) as TextView
+        labelView.text = label
+        grid.addView(labelView)
+        
+        // Value
+        val valueView = inflater.inflate(R.layout.item_biodata_value, grid, false) as TextView
+        valueView.text = ": $value"
+        grid.addView(valueView)
     }
 }

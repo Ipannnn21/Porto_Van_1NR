@@ -1,9 +1,8 @@
 package com.portfolio.app.ui.portofolio
 
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -33,11 +32,9 @@ class PortofolioAdapter : ListAdapter<Portofolio, PortofolioAdapter.ViewHolder>(
             binding.tvDeskripsi.text = item.deskripsi
             binding.tvTeknologi.text = item.teknologi
             
-            binding.root.setOnClickListener {
-                if (item.link.isNotEmpty()) {
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(item.link))
-                    it.context.startActivity(intent)
-                }
+            binding.root.setOnClickListener { view ->
+                val action = PortofolioFragmentDirections.actionPortofolioFragmentToPortofolioDetailFragment(item.id)
+                view.findNavController().navigate(action)
             }
         }
     }

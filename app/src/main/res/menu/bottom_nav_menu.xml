@@ -26,4 +26,14 @@
         android:icon="@drawable/ic_folder"
         android:title="Portofolio" />
 
+    <item
+        android:id="@+id/kontakFragment"
+        android:icon="@drawable/ic_contact"
+        android:title="Kontak" />
+
+    <item
+        android:id="@+id/downloadCvFragment"
+        android:icon="@drawable/ic_download"
+        android:title="Download CV" />
+
 </menu>

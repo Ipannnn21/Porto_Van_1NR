@@ -1,43 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/tentangFragment">
 
     <fragment
         android:id="@+id/tentangFragment"
         android:name="com.portfolio.app.ui.tentang.TentangFragment"
-        android:label="Tentang Saya">
-    </fragment>
+        android:label="Tentang Saya"
+        tools:layout="@layout/fragment_tentang" />
 
     <fragment
         android:id="@+id/pendidikanFragment"
         android:name="com.portfolio.app.ui.pendidikan.PendidikanFragment"
-        android:label="Pendidikan">
-    </fragment>
+        android:label="Pendidikan"
+        tools:layout="@layout/fragment_pendidikan" />
 
     <fragment
         android:id="@+id/pengalamanFragment"
         android:name="com.portfolio.app.ui.pengalaman.PengalamanFragment"
-        android:label="Pengalaman">
-    </fragment>
+        android:label="Pengalaman"
+        tools:layout="@layout/fragment_pengalaman" />
 
     <fragment
         android:id="@+id/skillFragment"
         android:name="com.portfolio.app.ui.skill.SkillFragment"
-        android:label="Skills">
-    </fragment>
+        android:label="Skills"
+        tools:layout="@layout/fragment_skill" />
 
     <fragment
         android:id="@+id/portofolioFragment"
         android:name="com.portfolio.app.ui.portofolio.PortofolioFragment"
-        android:label="Portofolio">
+        android:label="Portofolio"
+        tools:layout="@layout/fragment_portofolio">
+        <action
+            android:id="@+id/action_portofolioFragment_to_portofolioDetailFragment"
+            app:destination="@id/portofolioDetailFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/kontakFragment"
         android:name="com.portfolio.app.ui.kontak.KontakFragment"
-        android:label="Kontak">
+        android:label="Kontak"
+        tools:layout="@layout/fragment_kontak" />
+
+    <fragment
+        android:id="@+id/portofolioDetailFragment"
+        android:name="com.portfolio.app.ui.portofolio.PortofolioDetailFragment"
+        android:label="Detail Portofolio"
+        tools:layout="@layout/fragment_portofolio_detail">
+        <argument
+            android:name="portfolioId"
+            app:argType="integer" />
     </fragment>
+
+    <fragment
+        android:id="@+id/downloadCvFragment"
+        android:name="com.portfolio.app.ui.cv.DownloadCvFragment"
+        android:label="Download CV"
+        tools:layout="@layout/fragment_download_cv" />
 
 </navigation>

@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -33,6 +34,7 @@ android {
     
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -61,4 +63,7 @@ dependencies {
     
     // PDF generation
     implementation("com.itextpdf:itext7-core:7.2.5")
+
+    // Image Loading - Coil
+    implementation("io.coil-kt:coil:2.5.0")
 }
