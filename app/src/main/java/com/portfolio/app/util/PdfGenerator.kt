@@ -25,7 +25,7 @@ import java.io.OutputStream
 class PdfGenerator(private val context: Context) {
 
     private val dbHelper = DatabaseHelper(context)
-    private val appFolderName = "PortfolioApp"
+    private val appFolderName = "Porto Irfan"
 
     fun generateAndSaveAtsCv() {
         val fileName = "CV_Irfan_Harits_ATS.pdf"
