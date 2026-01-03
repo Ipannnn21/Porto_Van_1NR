@@ -1,10 +1,11 @@
 package com.portfolio.app.ui.tentang
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.GridLayout
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.portfolio.app.R
@@ -35,36 +36,54 @@ class TentangFragment : Fragment() {
             view.findViewById<TextView>(R.id.tv_deskripsi_singkat).text = it.deskripsiSingkat
 
             // Populate Biodata
-            val gridBiodata = view.findViewById<GridLayout>(R.id.grid_biodata)
-            val biodataMap = mapOf(
-                "Tempat, Tanggal Lahir" to it.tempatTanggalLahir,
-                "Status" to it.statusPernikahan,
-                "Kewarganegaraan" to it.kewarganegaraan,
-                "Agama" to it.agama,
-                "Jenis Kelamin" to it.jenisKelamin,
-                "Nomor Telepon" to it.phone,
-                "Email" to it.email
+            val biodataContainer = view.findViewById<LinearLayout>(R.id.container_biodata)
+            biodataContainer.removeAllViews() // Bersihkan view lama jika ada
+
+            val biodataMap = linkedMapOf(
+                "Tempat, Tanggal Lahir :" to it.tempatTanggalLahir,
+                "Status :" to it.statusPernikahan,
+                "Kewarganegaraan :" to it.kewarganegaraan,
+                "Agama :" to it.agama,
+                "Jenis Kelamin :" to it.jenisKelamin,
+                "Nomor Telepon :" to it.phone,
+                "Email :" to it.email
             )
 
             for ((label, value) in biodataMap) {
                 if (!value.isNullOrBlank()) {
-                    addBiodataRow(gridBiodata, label, value)
+                    addBiodataRow(biodataContainer, label, value)
                 }
             }
         }
     }
 
-    private fun addBiodataRow(grid: GridLayout, label: String, value: String) {
-        val inflater = LayoutInflater.from(context)
+    private fun addBiodataRow(container: LinearLayout, label: String, value: String) {
+        val context = requireContext()
+
+        // 1. Label TextView
+        val labelTextView = TextView(context).apply {
+            text = label
+            setTextAppearance(android.R.style.TextAppearance_Material_Body2)
+            // Atur margin bawah untuk memberi spasi sebelum nilai
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply { bottomMargin = 2 }
+        }
+
+        // 2. Value TextView
+        val valueTextView = TextView(context).apply {
+            text = value
+            setTextAppearance(android.R.style.TextAppearance_Material_Body1)
+            setTypeface(typeface, Typeface.BOLD)
+            // Atur margin bawah untuk memberi spasi antar pasangan biodata
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply { bottomMargin = 16 } // Spasi 16dp
+        }
         
-        // Label
-        val labelView = inflater.inflate(R.layout.item_biodata_label, grid, false) as TextView
-        labelView.text = label
-        grid.addView(labelView)
-        
-        // Value
-        val valueView = inflater.inflate(R.layout.item_biodata_value, grid, false) as TextView
-        valueView.text = ": $value"
-        grid.addView(valueView)
+        container.addView(labelTextView)
+        container.addView(valueTextView)
     }
 }
